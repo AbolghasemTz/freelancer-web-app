@@ -1,11 +1,6 @@
-import React from 'react'
-
-function Empty() {
+function Empty({ resourceName }) {
   return (
-    <p>
-      پروژه یافت نشد
-    </p>
-  )
+    <p className="font-bold text-secondary-700"> {resourceName} یافت نشد.</p>
+  );
 }
-
-export default Empty
+export default Empty;
