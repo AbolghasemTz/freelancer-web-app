@@ -25,6 +25,7 @@ function ProjectTable() {
             <th>فریلنسر</th>
             <th>وضعیت</th>
             <th>عملیات</th>
+            <th>درخواست</th>
           </tr>
         </thead>
         <tbody>

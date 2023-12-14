@@ -9,7 +9,7 @@ function ProjectTableV2() {
   const { isLoading, projects } = useOwnerProjects();
   console.log(projects);
   if (isLoading) return <Loading />;
-  if (!projects.length) return <Empty />;
+  if (!projects.length) return <Empty resourceName="پروژه ای"/>;
   return (
     <Table>
       <Table.Header>
@@ -22,6 +22,7 @@ function ProjectTableV2() {
         <th>فریلنسر</th>
         <th>وضعیت</th>
         <th>عملیات</th>
+        <th>درخواست</th>
       </Table.Header>
       <Table.Body>
         {projects.map((project, index) => (
