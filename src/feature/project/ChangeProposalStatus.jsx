@@ -17,7 +17,7 @@ function ChangeProposalStatus({ proposalId, onClose }) {
    const {isChanging,ChangeProposalStatus} = useChangeProposalSatus()
 const queryClient = useQueryClient()
     const onSubmit = (data) => {
-      ChangeProposalStatus({id:proposalId,data},{
+      ChangeProposalStatus({proposalId,projectId,...data},{
         onSuccess:() => {
             onClose(),
             queryClient.invalidateQueries({queryKey:["project",projectId]})

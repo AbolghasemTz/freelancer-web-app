@@ -1,6 +1,6 @@
 import React from 'react'
 import {HiCollection, HiCurrencyDollar, HiOutlineViewGrid} from 'react-icons/hi'
-import Stat from './Stat';
+import Stat from '../../ui/Stat';
 function Stats({projects}) {
 const numOfProjects = projects.length;
 const numOfAcceptedProject = projects.map((p) => p.status === 2 ).length
