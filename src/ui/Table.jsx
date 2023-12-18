@@ -1,32 +1,25 @@
-import React from 'react'
+import React from "react";
 
-function Table({children}) {
+function Table({ children }) {
   return (
     <div className="bg-secondary-0 overflow-x-auto">
-   <table>{children}</table>
-    
+      <table>{children}</table>
     </div>
-  )
+  );
 }
 
-export default Table
+export default Table;
 
-function TableHeader({children}) {
-    return <thead className='title-row'>
-{children}
-    </thead>
+function TableHeader({ children }) {
+  return <thead className="title-row">{children}</thead>;
 }
-function TableBody({children}) {
-    return <thead className=''>
-{children}
-    </thead>
+function TableBody({ children }) {
+  return <thead>{children}</thead>;
 }
-function TableRow({children}) {
-    return <tr className=''>
-{children}
-    </tr>
+function TableRow({ children }) {
+  return <tr>{children}</tr>;
 }
 
 Table.Header = TableHeader;
-Table.Body = TableBody
-Table.Row = TableRow
+Table.Body = TableBody;
+Table.Row = TableRow;
