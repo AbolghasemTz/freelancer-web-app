@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SendOtpForm from "./SendOtpForm";
 import CheckOtpForm from "./CheckOtpForm";
 import { useMutation } from "@tanstack/react-query";
 import { getOtp } from "../../services/authService";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import useUser from "./useUser";
+import { useNavigate } from "react-router-dom";
 function AuthContainer() {
+  const navigate = useNavigate()
   const [step, setStep] = useState(1);
+  const {user} = useUser()
   // const [phoneNumber, setPhoneNumber] = useState("");
-
+useEffect(() => {
+if(user) navigate("/",{replace:true})
+},[user,navigate])
   const { isPending : isSendingOtp, mutateAsync,data:otpResponse } = useMutation({
     mutationFn: getOtp,
   });
+
+
   const sendOtpHandler = async (data) => {
     
 
@@ -49,6 +57,8 @@ function AuthContainer() {
         return null;
     }
   };
+
+
   return <div className="w-full sm:max-w-sm">{renderStep()}</div>;
 }
 

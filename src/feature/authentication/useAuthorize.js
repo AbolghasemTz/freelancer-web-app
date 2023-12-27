@@ -9,6 +9,8 @@ export default function useAuthorize() {
  if(user) isAuthenticated =true
  
  let isAuthroized = false
+ let isActive = false
+ if(user && Number(user.status) === 2) isActive = true
 // if(pathname.includes("owner")){
 //     if(user && user.role ==="OWNER") isAuthroized = true
 // }
@@ -20,7 +22,7 @@ export default function useAuthorize() {
 // }
 
 const ROLES ={
-    admin:"Admin",
+    admin:"ADMIN",
     freelancer:"FREELANCER",
     owner:"OWNER"
 }
@@ -29,7 +31,7 @@ const desierdRole =pathname.split("/").at(1)
 if(Object.keys(ROLES).includes(desierdRole)){
     if(user && user.role === ROLES[desierdRole]) isAuthroized = true
 }
-return {isLoading,isAuthenticated,isAuthroized,user}
+return {isLoading,isAuthenticated,isAuthroized,user,isActive}
 
 
 

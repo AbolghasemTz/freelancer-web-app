@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Table from "../../ui/Table";
 import truncateText from "../../utils/truncateText";
-import Modal from "../../ui/Modal"
+import Modal from "../../ui/Modal";
 import ChangeProposalStatus from "./ChangeProposalStatus";
 const statusStyle = [
   {
@@ -12,8 +12,8 @@ const statusStyle = [
   { label: "تایید شده", className: "badge--success" },
 ];
 function ProposalRow({ proposal, index }) {
-const {status,user} = proposal;
-const [open,setIsOpen] = useState(false)
+  const { status, user } = proposal;
+  const [open, setIsOpen] = useState(false);
   return (
     <Table.Row>
       <td>{index + 1}</td>
@@ -23,15 +23,22 @@ const [open,setIsOpen] = useState(false)
       </td>
       <td>{proposal?.duration} روز</td>
       <td>{proposal?.price}</td>
-      <td className={`badge mt-4 ${statusStyle[status].className}`}>{statusStyle[status].label}</td>
-      <td>
-      <Modal title="تغییر وضعیت درخواست" open={open} onClose={() => setIsOpen(false)}>
-<ChangeProposalStatus proposalId={proposal._id} onClose={() => setIsOpen(false)}/>
-</Modal>
-<button onClick={() => setIsOpen(true)}>تغییر وضعیت</button>
+      <td className={`badge mt-4 ${statusStyle[status].className}`}>
+        {statusStyle[status].label}
       </td>
-
-    
+      <td>
+        <Modal
+          title="تغییر وضعیت درخواست"
+          open={open}
+          onClose={() => setIsOpen(false)}
+        >
+          <ChangeProposalStatus
+            proposalId={proposal._id}
+            onClose={() => setIsOpen(false)}
+          />
+        </Modal>
+        <button onClick={() => setIsOpen(true)}>تغییر وضعیت</button>
+      </td>
     </Table.Row>
   );
 }
