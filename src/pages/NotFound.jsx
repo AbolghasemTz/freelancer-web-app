@@ -7,7 +7,7 @@ const moveBack = useMoveBack()
   return (
     <div className="sm:max-w-sm flex justify-center items-center pt-10">
       <div>
-        <h1 className="text-xl font-bold text-secondary-800">
+        <h1 className="text-xl font-bold text-secondary-500">
           صفحه که دنبالش بودید پیدا نشد
         </h1>
         <button onClick={moveBack} className="flex items-center gap-x-2">

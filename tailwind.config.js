@@ -56,8 +56,12 @@ export default {
   },
   plugins: [
     tailwindFormLogin({
-      strategy:'class'
+      strategy:'class',
     }),
-
+    
   ],
+  'postcss-import': {},
+  'tailwindcss/nesting': 'postcss-nesting',
+  tailwindcss: {},
+  autoprefixer: {},
 };
