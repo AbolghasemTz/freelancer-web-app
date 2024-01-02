@@ -26,6 +26,10 @@ function AdminLayout() {
           <HiCollection />
           <span> درخواست ها</span>
         </CoustomNavLink>
+        <CoustomNavLink to="/admin/category">
+          <HiCollection />
+          <span>اضافه کردن دسته بندی</span>
+        </CoustomNavLink>
       </Sidebar>
    </AppLayout>
   )

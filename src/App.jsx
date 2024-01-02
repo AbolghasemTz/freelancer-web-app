@@ -21,6 +21,7 @@ import ProtectedRow from "./ui/ProtectedRow";
 import AdminLayout from "./feature/admin/AdminLayout";
 import AdminDashboard from "./pages/AdminDashboard";
 import Users from "./pages/Users";
+import AddCategory from "./pages/AddCategory";
 const queryClient = new QueryClient();
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
               <Route  path="users" element={<Users />}/>
               <Route  path="proposals" element={<Proposals />}/>
               <Route  path="projects" element={<SubmitedProjects />}/>
+              <Route  path="category" element={<AddCategory />}/>
             </Route>
 
             <Route path="/" element={<Home />} />

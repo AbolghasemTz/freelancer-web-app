@@ -1,14 +1,16 @@
-import React from 'react'
-
+import React from "react";
+import Header from "../ui/Header";
+import FREELANCER_PIC from "../assets/free.jpg";
 function Home() {
   return (
-    <div className="h-screen bg-secondary-0">
-
-    <div className="sm:max-w-sm text-secondary-700 flex justify-center items-center pt-10">
-    <h1 className='p-4 text-xl '>  صفحه اصلی</h1>
+    <div className=" bg-secondary-0">
+      <Header />
+       <div className="relative">
+        <h1 className="text-white absolute top-48 right-52 lg:text-5xl text-2xl">به سایت فریلنسر خوش آمدید</h1>
+       <img className="bg-cover max-h-[calc(100vh-4.5rem)] w-full" src={FREELANCER_PIC} alt="freelancer home" />
+       </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

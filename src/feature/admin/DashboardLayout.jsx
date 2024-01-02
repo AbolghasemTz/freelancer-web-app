@@ -15,7 +15,7 @@ function DashboardLayout() {
   return (
     <div>
       <DashboardHeader />
-      <Stats proposals={proposals.length} projects={projects.length} users={users.length}/>
+      <Stats proposals={proposals?.length} projects={projects?.length} users={users?.length}/>
     </div>
   )
 }
