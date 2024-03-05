@@ -3,6 +3,7 @@ import Table from "../../ui/Table";
 import truncateText from "../../utils/truncateText";
 import Modal from "../../ui/Modal";
 import ChangeProposalStatus from "./ChangeProposalStatus";
+import { toPersianNumbersWithComma } from "../../utils/toPersianNumber";
 const statusStyle = [
   {
     label: "رد شده",
@@ -22,7 +23,7 @@ function ProposalRow({ proposal, index }) {
         <p> {truncateText(proposal?.description, 50)}</p>
       </td>
       <td>{proposal?.duration} روز</td>
-      <td>{proposal?.price}</td>
+      <td>{toPersianNumbersWithComma(proposal?.price)} تومان </td>
       <td className={`badge mt-4 ${statusStyle[status].className}`}>
         {statusStyle[status].label}
       </td>
