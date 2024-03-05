@@ -3,6 +3,7 @@ import useProposals from './useProposals'
 import Table from '../../ui/Table';
 import Loading from '../../ui/Loading';
 import ProposalRow from './ProposalRow';
+import Empty from "../../ui/Empty"
 
 function ProposalTable() {
   const {isLoading,proposals} =  useProposals()

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from './Header'
-import Sidebar from './Sidebar'
+
 
 function AppLayout({children}) {
   return (
@@ -11,7 +11,7 @@ function AppLayout({children}) {
   
       {children}
       <div className="bg-secondary-100 p-8 overflow-y-auto">
-        <div className="mx-auto max-w-screen-lg  flex flex-col gap-y-12">
+        <div className="mx-auto max-w-screen-lg flex flex-col gap-y-12">
         <Outlet />
         </div>
         </div>
